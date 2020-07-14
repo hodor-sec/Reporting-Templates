@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>FQDN</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">FQDN</h1><br/><strong>Command:</strong><br />for fqdn in $(cat osint-resolvable.txt); do for port in $(printf "80\n8080\n8880\n8088\n8888"); do echo $fqdn:$port; printf "\n"; timeout 3 curl -L -k -I -X GET http://$fqdn:$port; done; done | tee curl_http_fqdn.txt<br />cat curl_http_fqdn.txt | grep --color=always -E '^|^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.){1,}([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]){1,}:[0-9]{1,6}$' | aha --black &gt; curl_http_fqdn.html<br /><br /><strong>Output:</strong><br /></div></body></html>

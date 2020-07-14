@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Banner grabbing</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Banner grabbing</h1><br/><strong>Grab banner</strong><br />printf "GET / HTTP/1.0\r\n\r\n" | nc -v scanme.nmap.org 80<br /><br /><strong>Netcat keep connection open. Added host due to HTTP 1.1</strong><br />$ nc -C www.sec542.org 80<br />HEAD / HTTP/1.1<br />Host: www.sec542.org<br /><br /><strong>Over HTTPS</strong><br />printf "HEAD / HTTP/1.0\r\n\r\n" | openssl s_client -connect www.sec542.org:443</div></body></html>

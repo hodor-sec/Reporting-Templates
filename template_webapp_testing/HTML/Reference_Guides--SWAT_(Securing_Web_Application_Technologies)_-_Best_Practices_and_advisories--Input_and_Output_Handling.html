@@ -1,0 +1,27 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Input and Output Handling</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Input and Output Handling</h1><br/><table class="table"><col/><col/><col/><tr><th>Best Practice</th><th>Description</th><th>CWE ID</th></tr><tr><td>Conduct Contextual Output Encoding</td><td>All output functions must contextually encode data before sendingit to the user. Depending on where the output will end up in the HTML page, the output must be encoded differently. For example, data placed in the URL context must be encoded differently than data placed in JavaScript context within the HTML page.
+Example: Resource: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</td><td>cwe-79</td></tr><tr><td>Prefer Whitelists over Blacklists</td><td>For each user input field, there should be validation on the input content. Whitelisting input is the preferred approach. Only accept data that meets a certain criteria. For input that needs more flexibility, blacklisting can also be applied where known bad input patterns or characters are blocked.</td><td>cwe-159
+cwe-144</td></tr><tr><td>Use Parameterized SQL Queries</td><td>SQL queries should be crafted with user content passed into a bind variable. Queries written this way are safe against SQL injectionattacks. SQL queries should not be created dynamically using string concatenation. Similarly, the SQL query string used in a bound or parameterized query should never be dynamically built from user input.
+Example: Sony SQL injection Hack (http://www.infosecurity-magazine.com/view/27930/lulzsec-sony-pictures-hackers-were-school-chums)</td><td>cwe-89
+cwe-564</td></tr><tr><td>Use Tokens to Prevent Forged Requests</td><td>In order to prevent Cross-Site Request Forgery attacks, you must embed a random value that is not known to third parties into the HTML form. This CSRF protection token must be unique to each request. This prevents a forged CSRF request from being submitted because the attacker does not know the value of the token.</td><td>cwe-352</td></tr><tr><td>Set the Encoding for Your Application</td><td>For every page in your application set the encoding using HTTPheaders or meta tags within HTML. This ensures that the encoding ofthe page is always defined and that browser will not have to determine the encoding on its own. Setting a consistent encoding, like UTF-8, for your application reduces the overall risk of issues like Cross-Site Scripting.</td><td>cwe-172</td></tr><tr><td>Validate Uploaded Files</td><td>When accepting file uploads from the user make sure to validate the size of the file, the file type, and the file contents as well as ensuring that it is not possible to override the destination path for the file.</td><td>cwe-434
+cwe-616
+cwe-22</td></tr><tr><td>Use the Nosniff Header for Uploaded Content</td><td>When hosting user uploaded content which can be viewed by other users, use the X-Content-Type-Options: nosniff header so that browsers do not try to guess the data type. Sometimes the browser can be tricked into displaying the data type incorrectly (e.g. showing a GIF file as HTML). Always let the server or application determine the data type.</td><td>cwe-430</td></tr><tr><td>Validate the Source of Input</td><td>The source of the input must be validated. For example, if input is expected from a POST request do not accept the input variable from a GET request.</td><td>cwe-20
+cwe-346</td></tr><tr><td>Use the X-Frame-Options Header</td><td>Use the X-Frame-Options header to prevent content from being loaded by a foreign site in a frame. This mitigates Clickjackingattacks. For older browsers that do not support this header add framebusting Javascript code to mitigate Clickjacking (although thismethod is not foolproof and can be circumvented).
+Example: Flash camera and mic hack (http://jeremiahgrossman.blogspot.com/2008/10/clickjacking-web-pages-can-see-and-hear.html)</td><td>caPec-103
+cwe-693</td></tr><tr><td>Use Secure HTTP Response Headers</td><td>The Content Security Policy (CSP), X-XSS-Protection, and Public-Key-Pins headers help defend against Cross-Site Scripting (XSS) and Man-in-the-Middle (MITM) attacks.
+Example: OWASP Secure Headers Project</td><td>cwe-79
+cwe-692</td></tr></table><br /></div></body></html>

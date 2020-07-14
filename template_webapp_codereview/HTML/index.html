@@ -1,0 +1,184 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Template_webapp_code-review_vuln-analysis_application_v0.3.ctb</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  <script></script>
+</head>
+<body><div class="two-panels">
+<div class="tree-panel">
+<div class="tree">
+<p>
+<strong>Index</strong></br>
+<button onclick="expandAllSubtrees()">Expand All</button> <button onclick="collapseAllSubtrees()">Collapse All</button>
+</p>
+<ul class="outermost">
+<li class="leaf"><a href="#" onclick="changeFrame('Methodology.html')">Methodology</a></li>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review.html')">Regex for Code Review</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--{TEMPLATE}.html')">{TEMPLATE}</a></li>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--AJAX-JS.html')">AJAX/JS</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--AJAX-JS--Generic.html')">Generic</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Authorization,_Assert_&_Revert.html')">Authorization, Assert & Revert</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Authorization,_Assert_&_Revert--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Class_Design.html')">Class Design</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Class_Design--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Cookies.html')">Cookies</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Cookies--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Configs.html')">Configs</a></li>
+<ul class="subtree">
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Configs--.NET.html')">.NET</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Configs--.NET--web.config.html')">web.config</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Configs--.NET--global.asax.html')">global.asax</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Configs--.NET--machine.config.html')">machine.config</a></li>
+</ul>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Cryptography.html')">Cryptography</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Cryptography--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Error_handling.html')">Error handling</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Error_handling--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Error_handling--ASP.html')">ASP</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTML.html')">HTML</a></li>
+<ul class="subtree">
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTML--HTML_output.html')">HTML output</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTML--HTML_output--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTML--HTML_tags.html')">HTML tags</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTML--HTML_tags--.NET.html')">.NET</a></li>
+</ul>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP.html')">HTTP</a></li>
+<ul class="subtree">
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_calls.html')">HTTP calls</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_calls--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_calls--PHP.html')">PHP</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_calls--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_calls--ASP.html')">ASP</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_Response_Splitting_-_Redirection.html')">HTTP Response Splitting / Redirection</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_Response_Splitting_-_Redirection--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--HTTP--HTTP_Response_Splitting_-_Redirection--ASP.html')">ASP</a></li>
+</ul>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Input_controls.html')">Input controls</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Input_controls--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Input-Output_Streams.html')">Input/Output Streams</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Input-Output_Streams--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Legacy.html')">Legacy</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Legacy--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Legacy--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Logging.html')">Logging</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Logging--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Logging--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Race_Conditions.html')">Race Conditions</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Race_Conditions--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Race_Conditions--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Redirection.html')">Redirection</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Redirection--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Serialization.html')">Serialization</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Serialization--Example_entrypoints.html')">Example entrypoints</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Serialization--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Serialization--PHP.html')">PHP</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Serialization--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Servlets.html')">Servlets</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Servlets--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Sessions.html')">Sessions</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Sessions--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Sessions--ASP.html')">ASP</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--SSL-TLS.html')">SSL/TLS</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SSL-TLS--Java.html')">Java</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Storage.html')">Storage</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Storage--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi.html')">SQLi</a></li>
+<ul class="subtree">
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--Generic.html')">Generic</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--Generic--Search_for_potential_injections.html')">Search for potential injections</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--Generic--Queries.html')">Queries</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--Generic--Chars_to_test.html')">Chars to test</a></li>
+</ul>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--.NET.html')">.NET</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--SQLi--ASP.html')">ASP</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Threads_and_Concurrency.html')">Threads and Concurrency  </a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Threads_and_Concurrency--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--Type_Juggling_-_Loose_Comparisions.html')">Type Juggling / Loose Comparisions</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--Type_Juggling_-_Loose_Comparisions--PHP.html')">PHP</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--XSS.html')">XSS</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--XSS--Java.html')">Java</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--XSS--.NET.html')">.NET</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('Regex_for_Code_Review--XXE.html')">XXE</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('Regex_for_Code_Review--XXE--Java.html')">Java</a></li>
+</ul>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}.html')">{APPLICATION_NAME-VERSION}</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Setting_up_environment.html')">Setting up environment</a></li>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Initial_vulnerailbity_discovery.html')">Initial vulnerailbity discovery</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Initial_vulnerailbity_discovery--Extracting_-_Decompiling.html')">Extracting / Decompiling</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Initial_vulnerailbity_discovery--Searching_-_Regex.html')">Searching / Regex</a></li>
+</ul>
+<li><button onclick="toggleSubTree(this)">-</button> <a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Vulnerability_Analysis.html')">Vulnerability Analysis</a></li>
+<ul class="subtree">
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Vulnerability_Analysis--{FILE1}.html')">{FILE1}</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Vulnerability_Analysis--{FILE2}.html')">{FILE2}</a></li>
+</ul>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Triggering_vulnerability.html')">Triggering vulnerability</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Bypassing_filters.html')">Bypassing filters</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Exfiltration.html')">Exfiltration</a></li>
+<li class="leaf"><a href="#" onclick="changeFrame('{APPLICATION_NAME-VERSION}--Command_execution.html')">Command execution</a></li>
+</ul>
+</ul>
+</div>
+</div>
+<div class="page-panel"><iframe src="" id="page_frame"></iframe></div></div><script src="res/script3.js"></script>
+</body></html>

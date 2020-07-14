@@ -1,0 +1,23 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Data Protection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Data Protection</h1><br/><table class="table"><col/><col/><col/><tr><th>Best Practice</th><th>Description</th><th>CWE ID</th></tr><tr><td>Use HTTPS Everywhere</td><td>Ideally, HTTPS should be used for your entire application. If you have to limit where it's used, then HTTPS must be applied to any authentication pages as well as to all pages after the user is authenticated. If sensitive information (e.g. personal information) can be submitted before authentication, thosefeatures must also be sent over.
+Example: Firesheep</td><td>cwe-311 
+cwe-319
+cwe-523</td></tr><tr><td>Disable HTTP Access for All Protected Resources</td><td>For all pages requiring protection by HTTPS, the same URL should not be accessible via the insecure HTTP channel.</td><td>cwe-319</td></tr><tr><td>Use the Strict-Transport-Security Header</td><td>The Strict-Transport-Security header ensures that the browser does not talk to the server over HTTP. This helps reduce the risk of HTTP downgrade attacks as implemented by the sslsniff tool.</td><td></td></tr><tr><td>Store User Passwords Using a Strong, Iterative, Salted Hash</td><td>User passwords must be stored using secure hashing techniques with strong algorithms like PBKDF2, bcrypt, or SHA-512. Simply hashing the password a single time does not sufficiently protect the password. Use adaptive hashing (a work factor), combined with a randomly generated salt for each user to make the hash strong.
+Example: LinkedIn password leak</td><td>cwe-257</td></tr><tr><td>Securely Exchange Encryption Keys</td><td>If encryption keys are exchanged or pre-set in your application then anykey establishment or exchange must be performed over a secure channel</td><td></td></tr><tr><td>Set Up Secure Key Management Processes</td><td>When keys are stored in your system they must be properly secured and only accessible to the appropriate staff on a need to know basis.
+Example: AWS Key Management Service (KMS), Azure Key Vault, AWS CloudHSM</td><td>cwe-320</td></tr><tr><td>Weak TLS Configuration on Servers</td><td>Weak ciphers must be disabled on all servers. For example, SSL v2, SSL v3, and TLS protocols prior to 1.2 have known weaknesses and are not considered secure. Additionally, disable the NULL, RC4, DES, and MD5 cipher suites. Ensure all key lengths are greater than 128 bits, use secure renegotiation, and disable compression.
+Example: Qualys SSL Labs</td><td></td></tr><tr><td>Use Valid HTTPS Certificates from a Reputable CA</td><td>HTTPS certificates should be signed by a reputable certificate authority. The name on the certificate should match the FQDN of the website. The certificate itself should be valid and not expired.
+Example: Let's Encrypt (https://letsencrypt.org)</td><td></td></tr><tr><td>Disable Data Caching Using Cache Control Headers and Autocomplete</td><td>Browser data caching should be disabled using the cache control HTTPheaders or meta tags within the HTML page. Additionally, sensitive input fields, such as the login form, should have the autocomplete=off setting in the HTML form to instruct the browser not to cache the credentials.</td><td>cwe-524</td></tr><tr><td>Limit the Use and Storage of Sensitive Data</td><td>Conduct an evaluation to ensure that sensitive data is not being unnecessarily transported or stored. Where possible, use tokenization to reduce data exposure risks.</td><td></td></tr></table><br /></div></body></html>

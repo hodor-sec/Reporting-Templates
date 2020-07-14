@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Java</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Java</h1><br/><strong><h2>Source Code Review</h2></strong><br /><br />The following Java API may be vulnerable to XXE if they are not configured properly. <br />•  javax.xml.parsers.DocumentBuilder<br />•  javax.xml.parsers.DocumentBuildFactory<br />•  org.xml.sax.EntityResolver<br />•  org.dom4j.*<br />•  javax.xml.parsers.SAXParser<br />•  javax.xml.parsers.SAXParserFactory<br />•  TransformerFactory<br />•  SAXReader<br />•  DocumentHelper<br />•  SAXBuilder<br />•  SAXParserFactory<br />•  XMLReaderFactory<br />•  XMLInputFactory<br />•  SchemaFactory<br />•  DocumentBuilderFactoryImpl<br />•  SAXTransformerFactory<br />•  DocumentBuilderFactoryImpl<br />•  XMLReader<br />•  Xerces: DOMParser, DOMParserImpl, SAXParser, XMLParser<br /><br />Check source code if the docType, external DTD, and external parameter entities are set as forbidden uses. <br />•  https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet<br />In addition, the Java POI office reader may be vulnerable to XXE if the version is under 3.10.1. <br /><br />The version of POI library can be identified from the file name of the JAR. For example, <br />•  poi-3.8.jar<br />•  poi-ooxml-3.8.jar<br /><br />The followings source code keyword may apply to C. <br />•  libxml2: xmlCtxtReadMemory,xmlCtxtUseOptions,xmlParseInNodeContext,xmlReadDoc,xmlReadFd,xmlReadFile ,xmlReadIO,xmlReadMemory, xmlCtxtReadDoc ,xmlCtxtReadFd,xmlCtxtReadFile,xmlCtxtReadIO <br />•  libxerces-c: XercesDOMParser, SAXParser, SAX2XMLReader<br /><br /><strong>References</strong><br />Whitepapers<br /> <br />•  [1] Alex Stamos: "Attacking Web Services" - http://www.owasp.org/images/d/d1/AppSec2005DC-Alex_Stamos-Attacking_Web_Services.ppt<br /><br />•  Gregory Steuck, "XXE (Xml eXternal Entity) attack", http://www.securityfocus.com/archive/1/297714<br />•  OWASP XXE Prevention Cheat Sheet https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet</div></body></html>

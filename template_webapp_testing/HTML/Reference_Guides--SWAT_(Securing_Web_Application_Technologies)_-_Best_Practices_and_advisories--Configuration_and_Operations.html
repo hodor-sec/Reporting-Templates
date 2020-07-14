@@ -1,0 +1,19 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Configuration and Operations</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Configuration and Operations</h1><br/><table class="table"><col/><col/><col/><tr><th>Best Practice</th><th>Description</th><th>CWE ID</th></tr><tr><td>Automate Application Deployment</td><td>Automating the deployment of your application, using Continuous Integration and Continuous Deployment, helps to ensure that changes are made in a consistent, repeatable manner in all environments.</td><td></td></tr><tr><td>Establish a Rigorous Change Management Process</td><td>A rigorous change management process must be maintained during change management operations. For example, new releases should only be deployed after process
+Example: RBS production outage (http://www.computing.co.uk/ctg/analysis/2186972/rbs-wrong-rbs-manager)</td><td>cwe-439</td></tr><tr><td>Define Security Requirements</td><td>Engage the business owner to define security requirements for the application. This includes items that range from the whitelist validation rules all the way to nonfunctional requirements like the performance of the login function. Defining these requirements up front ensures that security is baked into the system.</td><td></td></tr><tr><td>Conduct a Design Review</td><td>Integrating security into the design phase saves money and time. Conduct a risk review with security professionals and threat model the application to identify key risks. The helps you integrate appropriate countermeasures into the design and architecture of the application.</td><td>cwe-701
+cwe-656</td></tr><tr><td>Perform Code Reviews</td><td>Security focused code reviews can be one of the most effective ways to find security bugs. Regularly review your code looking for common issues like SQL Injection and Cross-Site Scripting.</td><td>cwe-702</td></tr><tr><td>Perform Security Testing</td><td>Conduct security testing both during and after development to ensure the application meets security standards. Testing should also be conducted after major releases to ensure vulnerabilities did not get introduced during the update process.</td><td></td></tr><tr><td>Harden the Infrastructure</td><td>All components of infrastructure that support the application should be configured according to security best practices and hardening guidelines. In a typical web application this can include routers, firewalls, network switches, operating systems, web servers, application servers, databases, and application frameworks.</td><td>cwe-15
+cwe-656</td></tr><tr><td>Define an Incident Handling Plan</td><td>An incident handling plan should be drafted and tested on a regular basis. The contact list of people to involve in a security incident related to the application should be well defined and kept up to date.</td><td></td></tr><tr><td>Educate the Team on Security</td><td>Training helps define a common language that the team can use to improve the security of the application. Education should not be confined solely to software developers, testers, and architects. Anyone associated with the development process, such as business analysts and project managers, should all have periodic software security awareness training.</td><td></td></tr></table><br /></div></body></html>

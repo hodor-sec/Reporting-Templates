@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>IP ranges</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">IP ranges</h1><br/><strong>Command:</strong><br />$ for range in $(cat cidr_ip_ranges_no_suffix.txt); do echo $range; printf '\n'; whois -H $range | egrep 'NetName:|Organization:'; printf '\n'; done | tee whois_ip_ranges.txt<br /><br /><strong>Output:</strong><br /></div></body></html>

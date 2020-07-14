@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>4.4.3 Test Account Provisioning Process (OTG-IDENT-003)  </title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">4.4.3 Test Account Provisioning Process (OTG-IDENT-003)  </h1><br/><br /><h2>Summary</h2><br />The provisioning of accounts presents an opportunity for an attacker  to create a valid account without application of the proper  identification and authorization process.  <br /><br /> <br /><br /><h2>Test objectives</h2><br />Verify which accounts may provision other accounts and of what type. <br /><br /> <br /><br /><h2>How to test</h2><br />Determine which roles are able to provision users and what sort of accounts they can provision.  <br />•  Is there any verification, vetting and authorization of provisioning requests?<br />•  Is there any verification, vetting and authorization of de-provisioning requests?<br />•  Can an administrator provision other administrators or just users? <br />•  Can an administrator or other user provision accounts with privileges greater than their own?<br />•  Can an administrator or user de-provision themselves?<br />•  How are the files or resources owned by the de-provisioned user managed? Are they deleted? Is access transferred?<br /><br /> <br /><br /><h3>Example</h3><br />In WordPress, only a user's name and email address are required to provision the user, as shown below: <br /><img src="images/199-1.png" alt="images/199-1.png" /> <br /><br /> De-provisioning of users requires the administrator to select the users  to be de-provisioned, select Delete from the dropdown menu (circled) and  then applying this action. The administrator is then presented with a  dialog box asking what to do with the user's posts (delete or transfer  them). <br /><img src="images/199-2.png" alt="images/199-2.png" /> <br /><br /> <br /><br /><h2>Tools</h2><br />While the most thorough and accurate approach to completing this test  is to conduct it manually, HTTP proxy tools could be also useful. <br /></div></body></html>

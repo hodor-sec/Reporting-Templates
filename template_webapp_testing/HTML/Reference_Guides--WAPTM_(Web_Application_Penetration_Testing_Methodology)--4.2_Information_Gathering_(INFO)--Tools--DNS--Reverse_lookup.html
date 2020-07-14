@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Reverse lookup</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Reverse lookup</h1><br/><strong>Reverse lookup:</strong><br />dig -x 8.8.8.8<br /><br /><strong>Iterate over list</strong>:<br />for ip in $(cat ip.txt); do dig -x $ip | grep -A1 'ANSWER SECTION' | grep -v ANSWER;done | tee reverse_lookup_ip.txt<br /><br /><strong>DNSrecon:</strong><br />dnsrecon.py -r 192.168.1.0/24<br /><br /><strong>NMAP</strong><br />$ nmap -sL 10.42.42.0/24 | grep \)<br />Starting Nmap 7.70 ( https://nmap.org ) at 2019-11-25 10:38 UTC<br />Nmap scan report for sirus.sec542.org (10.42.42.18)<br />Nmap scan report for www.sec542.org (10.42.42.42)<br />Nmap scan report for gargleblaster.sec542.org (10.42.42.67)<br />Nmap done: 256 IP addresses (0 hosts up) scanned in 0.06 seconds<br /></div></body></html>

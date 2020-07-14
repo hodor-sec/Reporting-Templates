@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>4.6.2 Testing for bypassing authorization schema (OTG-AUTHZ-002)  </title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">4.6.2 Testing for bypassing authorization schema (OTG-AUTHZ-002)  </h1><br/><br /><h2>Summary</h2><br />This kind of test focuses on verifying how the authorization schema  has been implemented for each role or privilege to get access to  reserved functions and resources. <br /><br />  For every specific role the tester holds during the assessment, for  every function and request that the application executes during the  post-authentication phase, it is necessary to verify: <br />•  Is it possible to access that resource even if the user is not authenticated?<br />•  Is it possible to access that resource after the log-out?<br />•  Is it possible to access functions and resources that should be accessible to a user that holds a different role or privilege? <br /><br /> Try to access the application as an administrative user and track all the administrative functions.  <br />•  Is it possible to access administrative functions also if the tester is logged as a user with standard privileges?<br />•  Is it possible to use these administrative functions as a user with a different role and for whom that action should be denied?<br /><br /> <br /><br /><h2>How to test</h2><br /><strong>Testing for access to administrative functions</strong> <br /> For example, suppose that the 'AddUser.jsp' function is part of the  administrative menu of the application, and it is possible to access it  by requesting the following URL:  <br /> <a href="https://www.example.com/admin/addUser.jsp">https://www.example.com/admin/addUser.jsp</a> <br /><br /> Then, the following HTTP request is generated when calling the AddUser function: <br />POST /admin/addUser.jsp HTTP/1.1<br />Host: www.example.com<br />[other HTTP headers]<br /><br />userID=fakeuser&amp;role=3&amp;group=grp001<br /><br /> What happens if a non-administrative user tries to execute that request?  Will the user be created? If so, can the new user use their privileges? <br /><br /> <strong>Testing for access to resources assigned to a different role</strong> <br /> For example analyze an application that uses a shared directory to store  temporary PDF files for different users. Suppose that documentABC.pdf  should be accessible only by the user test1 with roleA. Verify if user  test2 with roleB can access that resource. <br /><br /> <br /><br /><h2>Tools</h2><br />•  OWASP WebScarab: <a href="https://www.owasp.org/index.php/OWASP_WebScarab_Project">OWASP WebScarab Project</a><br /><br />•  <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP Zed Attack Proxy (ZAP)</a><br /></div></body></html>
