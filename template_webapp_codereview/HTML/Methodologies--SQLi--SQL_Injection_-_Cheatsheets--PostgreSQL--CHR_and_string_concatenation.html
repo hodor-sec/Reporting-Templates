@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>CHR and string concatenation</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">CHR and string concatenation</h1><br/><strong>CHR and string concatenation</strong><br />One of the ways in which we can bypass the quotes restriction is to use the CHR and concatenation syntax. For example, in most situations, we can select individual characters using<br />their code points (numbers that represent characters) and concatenate them together using the double pipe (||) operator.<br /><br />The problem is that character concatenation only works for basic queries such as SELECT, INSERT, DELETE, etc. It does not work for all SQL statements.<br /><br />amdb=#SELECT CHR(65) || CHR(87) || CHR(65) || CHR(69);<br />amdb=# CREATE TABLE AWAE (offsec text); INSERT INTO AWAE(offsec) VALUES<br />(CHR(65)||CHR(87)||CHR(65)||CHR(69));<br />CREATE TABLE<br />INSERT 0 1<br />amdb=# SELECT * from AWAE;<br />offsec<br />--------<br />AWAE<br />(1 row)</div></body></html>

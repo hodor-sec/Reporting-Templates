@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>vuln_serv.py</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">vuln_serv.py</h1><br/><div class="codebox"><div class="codebox"><span style="color:#0088ff;font-weight:400">#!/usr/bin/env&nbsp;python3</span><br /><span style="color:#333333;font-weight:400">import</span>&nbsp;os<br /><span style="color:#333333;font-weight:400">import</span>&nbsp;pickle<br /><span style="color:#333333;font-weight:400">import</span>&nbsp;socket<br /><br />def&nbsp;server(so):<br />&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;so.recv(<span style="color:#ff0044;font-weight:400">1024</span>)<br />&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;=&nbsp;pickle.loads(data)<br />&nbsp;&nbsp;&nbsp;&nbsp;c.send(<span style="color:#3ad900;font-weight:400">"Attempt&nbsp;failed\n"</span>)<br /><br />sock&nbsp;=&nbsp;socket.socket(socket.AF_INET,socket.SOCK_STREAM,<span style="color:#ff0044;font-weight:400">0</span>)<br />sock.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,<span style="color:#ff0044;font-weight:400">1</span>)<br />sock.bind((<span style="color:#3ad900;font-weight:400">'0.0.0.0'</span>,<span style="color:#ff0044;font-weight:400">6666</span>))<br />sock.listen(<span style="color:#ff0044;font-weight:400">2</span>)<br /><br />while&nbsp;<span style="color:#ff0044;font-weight:400">True</span>:<br />&nbsp;&nbsp;&nbsp;&nbsp;c,a&nbsp;=&nbsp;sock.accept()<br />&nbsp;&nbsp;&nbsp;&nbsp;if(os.fork()&nbsp;==&nbsp;<span style="color:#ff0044;font-weight:400">0</span>):<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.send(<span style="color:#3ad900;font-weight:400">b"Connection&nbsp;from&nbsp;"</span>&nbsp;+&nbsp;a[<span style="color:#ff0044;font-weight:400">0</span>].encode())<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server(c)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit(<span style="color:#ff0044;font-weight:400">1</span>)</div></div></div></body></html>

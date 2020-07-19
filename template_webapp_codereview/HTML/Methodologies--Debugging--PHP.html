@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>PHP</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">PHP</h1><br/>$ php -a<br />Interactive mode enabled<br /><br />php &gt; $cookie = 'a:2:{s:13:":new:username";s:5:"admin";s:12:":new:message";s:38:"That is the wrong username or password";}3f7d80e10a3d9c0a25c5f56199b067d4';<br />php &gt; $signature = substr($cookie, -32);<br />php &gt; $payload = substr($cookie, 0, -32);<br />php &gt; print_r(unserialize($payload));<br />Array<br />(<br />[:new:username] =&gt; admin<br />[:new:message] =&gt; That is the wrong username or password<br />)<br />php &gt;</div></body></html>

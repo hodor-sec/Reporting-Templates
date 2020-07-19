@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Phases</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Phases</h1><br/><strong><h2>Phases</h2></strong><br /><br /><strong>Setup</strong><br /> - Setup environment and prerequisites to analyze targeted application<br /> - Check native libraries related to application<br /> - Extract sourcecode by extracting / copying / decompiling<br /> - Enable error and DBMS logging on debugging machine<br /> <br /><strong>Initial vulnerability discovery</strong><br /> - Analyze source code for initial vulnerability discovery<br />     - Search for specific keywords by regex<br />     - Check unauthenticated areas, look for keywords indicating public access is allowed<br />     - Check authenticated portions of applications, having less focus<br />     - Check sanitization of user input; custom and/or trusted open-source libraries/code<br /> - Follow application logical flow<br />     - Check language specific HTTP request handlers<br />     - Keep track of related classes/functions/methods and their references<br />     - Use regex to search for referenced methods and classes<br />     <br /><strong>Vulnerability and dynamic analysis</strong><br /> - Vulnerability analysis of targeted application<br />    - Attempt to trigger the vulnerability and check results in logging or output<br />    - Check for filtered/translated characters during input<br />    - Check DBMS logging for specific syntax errors<br />    - Attempt to manually enter entire query in DBMS CLI for analysis<br /> - Dynamic / Debug analysis of targeted compiled application<br />    - Java servlets: check processes via Process Explorer and viewing properties<br />    - Java: parse web.xml for servlets<br />    - Java: look for native JAR servlets in WEB-INF folder<br />    -.NET: use DnSpy and set breakpoints on interesting lines<br /><br /><strong>Triggering vulnerability</strong><br /> - Create a POC to successfully trigger, reproduce and to exploit the vulnerability<br /> - Use debug statements in interpreted / scripted code<br /> <br /><strong>Bypassing filters</strong><br /> - Modify POC to bypass common filters, if required<br /> <br /><strong>Exfiltration</strong><br /> - Perform actions which attempt to achieve code execution, such as:<br />    - Exfiltrate data for enumeration of environment<br />    - Creating an admin user<br />    - Facilitating a reverse shell<br />    - Etc.<br />    <br /><strong>Command execution</strong><br /> - Create a fully automated one-shot RCE script<br /> </div></body></html>

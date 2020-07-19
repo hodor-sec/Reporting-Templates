@@ -1,0 +1,16 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Deserialization</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles3.css" type="text/css" />
+  
+    <script type="text/javascript">
+        function in_frame () { try { return window.self !== window.top; } catch (e) { return true; } }
+        if (!in_frame()) {
+            var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            window.location = 'index.html#' + page;
+        }
+    </script>
+</head>
+<body><div class="page"><h1 class="title">Deserialization</h1><br/>Attackers can force the execution of any readObject() / readResolve()methods of any class sitting in the classpath<br />By controlling the deserialized field values attackers may abuse the logic of these methods to run arbitrary code<br />JSON libraries do not (normally) invoke deserialization callbacks or magic methods</div></body></html>
